@@ -1,4 +1,4 @@
-package biblio.entity;
+package entity;
 
 public class Auteur {
 	int id;

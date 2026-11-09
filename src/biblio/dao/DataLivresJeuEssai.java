@@ -1,9 +1,10 @@
 package biblio.dao ;
 import java.util.ArrayList;
+
 import java.util.List;
 
-import biblio.entity.Auteur;
-import biblio.entity.Livre;
+import entity.Auteur;
+import entity.Livre;
 
 public class DataLivresJeuEssai implements DataLivres{
 	private List<Auteur> listeAuteurs;
@@ -93,8 +94,9 @@ public class DataLivresJeuEssai implements DataLivres{
 		Auteur(12, "Verne", "Jules")));
 		listeLivres.add(new Livre(33, "Les Fleurs du Mal", 1857, new Auteur(13,
 		"Baudelaire", "Charles")));
-		} @Override
+		} 
 	
+		@Override
 		public List<Auteur> getListeAuteurs() {
 			return listeAuteurs;
 		} // TO IMPLEMENTS
@@ -115,6 +117,7 @@ public class DataLivresJeuEssai implements DataLivres{
 			}
 			return null;
 		}
+		
 		@Override
 		public Auteur findAuteurByNom(String nom) {
 			// TODO Auto-generated method stub
@@ -125,6 +128,7 @@ public class DataLivresJeuEssai implements DataLivres{
 			}
 			return null;
 		}
+		
 		@Override
 		public Auteur findAuteurById(int id) {
 			for (Auteur auteur : listeAuteurs) {
@@ -134,6 +138,7 @@ public class DataLivresJeuEssai implements DataLivres{
 			}
 			return null;
 		}
+		
 		@Override
 		public List<Livre> findLivreByAuteurId(int auteurId) {
 			List<Livre> res = new ArrayList<Livre>();
@@ -145,6 +150,7 @@ public class DataLivresJeuEssai implements DataLivres{
 			}
 			return res;
 		}
+		
 		@Override
 		public List<Livre> findLivreByAuteurNom(String nomAuteur) {
 			List<Livre> res = new ArrayList<Livre>();
@@ -156,6 +162,7 @@ public class DataLivresJeuEssai implements DataLivres{
 			}
 			return res;
 		}
+		
 		@Override
 		public Livre findLivreByTitre(String titreLivre) {
 			for (Livre livre : listeLivres) {
@@ -165,6 +172,7 @@ public class DataLivresJeuEssai implements DataLivres{
 			}
 			return null;
 		}
+		
 		@Override
 		public Livre removeLivre(int id) {
 			for (int i = 0; i < listeLivres.size(); i++) {
@@ -176,6 +184,7 @@ public class DataLivresJeuEssai implements DataLivres{
 		    }
 		    return null;
 		}
+		
 		@Override
 		public Livre saveLivre(Livre l) throws Exception {
 			if (!listeAuteurs.contains(l.getAuteur())) {
@@ -184,10 +193,32 @@ public class DataLivresJeuEssai implements DataLivres{
 			listeLivres.add(l);
 			return l;
 		}
+		
 		@Override
 		public void saveAuteur(Auteur a) {
 			listeAuteurs.add(a);
 		}
 		
-		
+		@Override
+		public Auteur findAuteurNomLike(String nom) {
+			for (Auteur auteur : listeAuteurs) {
+				if (auteur.getNom()==nom.toLowerCase()) {
+					return auteur;
+				}
+			
+			}
+			return null;
+		}
+		/*
+		public Livre findLivreTitreLike(String titre) {
+			for (Livre livre : listeLivres) {
+				if (livre.getTitre()l)
+			}
+		}
+		*/
+		@Override
+		public Livre FindLivreTitreLike(String nom) {
+			// TODO Auto-generated method stub
+			return null;
+		}
 }

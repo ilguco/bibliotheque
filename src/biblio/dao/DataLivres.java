@@ -1,9 +1,8 @@
 package biblio.dao;
-import java.util.ArrayList;
 import java.util.List;
 
-import biblio.entity.Auteur;
-import biblio.entity.Livre;
+import entity.Auteur;
+import entity.Livre;
 
 public interface DataLivres {
 	public Livre findLivreById(int id) ;
@@ -18,6 +17,8 @@ public interface DataLivres {
 	List<Livre> findLivreByAuteurNom(String nomAuteur);
 	Auteur findAuteurById(int id);
 	List<Livre> findLivreByAuteurId(int auteurId);
+	Auteur findAuteurNomLike(String nom);
+	Livre FindLivreTitreLike(String nom);
 	
 
 }

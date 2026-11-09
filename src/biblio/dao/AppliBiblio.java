@@ -1,9 +1,8 @@
-package biblio.ihm ;
-import java.util.ArrayList;
+package biblio.dao ;
 import java.util.List;
 
-import biblio.entity.Auteur;
-import biblio.entity.Livre;
+import entity.Auteur;
+import entity.Livre;
 
 public class AppliBiblio {
 	
